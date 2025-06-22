@@ -113,14 +113,12 @@
     <script>
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const formData = new FormData(e.target); // ← esto ya contiene imágenes y texto
+  const formData = new FormData(e.target);
 
   try {
-      await fetch("https://html-form-server.onrender.com/send", {
+    const response = await fetch("https://html-form-server.onrender.com/send", {
       method: "POST",
       body: formData,
-});
-
     });
 
     const result = await response.text();
@@ -130,8 +128,8 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
     console.error(err);
   }
 });
-
 </script>
+
 
       <hr style="margin: 2rem 0" />
 
