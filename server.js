@@ -18,7 +18,7 @@ app.post("/send", upload.array("images", 2), async (req, res) => {
     service: "gmail",
     auth: {
       user: "styurwall@gmail.com",
-      pass: "awlk mkqj hwda pwvs",
+      pass: "",
     },
   });
 
