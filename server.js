@@ -1,7 +1,12 @@
+require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const app = express();
+app.use(express.static("public"));
+app.listen(3000, () => {
+  console.log("Servidor corriendo en http://localhost:3000");
+});
 
 // Configuración de multer para recibir imágenes
 const storage = multer.memoryStorage();
@@ -17,8 +22,8 @@ app.post("/send", upload.array("images", 2), async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "styurwall@gmail.com",
-      pass: "awlk mkqj hwda pwvs",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
