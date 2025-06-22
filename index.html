@@ -101,7 +101,7 @@
       <h2 style="font-size: 1.8em; font-weight: bold">Send Pictures</h2>
       <p><br />Just drop us a message, we will be in touch very soon.</p>
 
-    <form action="/send" method="POST" enctype="multipart/form-data">
+    <form id="contact-form" action="/send" method="POST" enctype="multipart/form-data">
       <input type="text" name="name" placeholder="Tu nombre" required><br><br>
       <input type="email" name="email" placeholder="Tu correo" required><br><br>
       <input type="text" name="address" placeholder="Dirección"><br><br>
@@ -110,6 +110,30 @@
       <input type="file" name="images" multiple accept="image/*"><br><br>
       <button type="submit" title="Click here to send">Enviar</button>
     </form>
+    <script>
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+
+  const plainData = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch("https://<tu-replit-username>.<tu-nombre-de-app>.repl.co/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(plainData)
+    });
+
+    const result = await response.text();
+    alert(result);
+  } catch (err) {
+    alert("Error al enviar el formulario");
+    console.error(err);
+  }
+});
+</script>
 
       <hr style="margin: 2rem 0" />
 
