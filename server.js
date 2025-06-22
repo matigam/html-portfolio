@@ -22,8 +22,13 @@ app.post("/send", upload.array("images", 2), async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
+<<<<<<< HEAD
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
+=======
+      user: "styurwall@gmail.com",
+      pass: "",
+>>>>>>> 9982ed40ac39ba9c3a2cab52a34957afed7f0a06
     },
   });
 
