@@ -116,9 +116,9 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
   const formData = new FormData(e.target); // ← esto ya contiene imágenes y texto
 
   try {
-      await fetch("https://form-backend-zm9d.onrender.com/send", {
-  method: "POST",
-  body: formData,
+      await fetch("https://html-form-server.onrender.com/send", {
+      method: "POST",
+      body: formData,
 });
 
     });
