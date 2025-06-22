@@ -113,17 +113,12 @@
     <script>
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const formData = new FormData(e.target);
-
-  const plainData = Object.fromEntries(formData.entries());
+  const formData = new FormData(e.target); // ← esto ya contiene imágenes y texto
 
   try {
-    const response = await fetch("https://<tu-replit-username>.<tu-nombre-de-app>.repl.co/send", {
+      const response = await fetch("https://mi-formulario.matiasnz.repl.co/send", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(plainData)
+      body: formData, // NO usar JSON.stringify
     });
 
     const result = await response.text();
@@ -133,6 +128,7 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
     console.error(err);
   }
 });
+
 </script>
 
       <hr style="margin: 2rem 0" />
