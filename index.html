@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+
     <title>Pro Painter Services</title>
 
   </head>
@@ -42,45 +46,27 @@
 </section>
 
 
-   <section class="section portfolio" id="portfolio">
+<section class="portfolio-carousel">
   <h2>Portfolio</h2>
   <p>Check out our recent work below:</p>
 
-  <div class="portfolio-grid">
-    <div class="image-container">
-      <img src="./images/portfolio1.jpg" alt="Living Room Painting" />
-      <div class="overlay-text">Marmorino Feature Wall</div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/portfolio8.png" alt=""></div>
+      <div class="swiper-slide"><img src="images/portfolio2.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/portfolio3.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/portfolio4.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/portfolio5.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/portfolio6.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/portfolio7.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/portfolio1.jpg" alt=""></div>
     </div>
-    <div class="image-container">
-      <img src="./images/portfolio2.jpg" alt="Office Wall Plaster" />
-      <div class="overlay-text">Marmorino Feature Wall</div>
-    </div>
-    <div class="image-container">
-      <img src="./images/portfolio3.jpg" alt="Office Wall Plaster" />
-      <div class="overlay-text">Office Wall Plaster</div>
-    </div>
-    <div class="image-container">
-      <img src="./images/portfolio4.jpg" alt="Office Wall Plaster" />
-      <div class="overlay-text">Office Wall Plaster</div>
-    </div>
-    <div class="image-container">
-      <img src="./images/portfolio5.jpg" alt="Office Wall Plaster" />
-      <div class="overlay-text">Office Wall Plaster</div>
-    </div>
-    <div class="image-container">
-      <img src="./images/portfolio6.jpg" alt="Office Wall Plaster" />
-      <div class="overlay-text">Office Wall Plaster</div>
-    </div>
-    <div class="image-container">
-      <img src="./images/portfolio7.jpg" alt="Office Wall Plaster" />
-      <div class="overlay-text">Office Wall Plaster</div>
-    </div>
-    <div class="image-container">
-      <img src="./images/portfolio8.png" alt="Office Wall Plaster" />
-      <div class="overlay-text">Office Wall Plaster</div>
-    </div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
+
+
+
 
 
     <section class="quick-quote" id="quick-quote">
@@ -167,5 +153,21 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
 
     <footer>&copy; 2025 Pro Painter Services. All rights reserved.</footer>
     
+
+    <!-- Swiper JS (al final del body) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
   </body>
 </html>
