@@ -7,6 +7,8 @@
       rel="stylesheet"
       href="./styles.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <title>Pro Painter Services</title>
@@ -24,9 +26,10 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="hero">
-      <div class="painted-text">Your Walls, Our Passion</div>
-    </div>
+  <section class="branding-section">
+  <h1 class="gold-text"></h1>
+</section>
+
 
 <section class="services-section">
   <h2>Our Services</h2>
@@ -76,10 +79,6 @@
       <img src="./images/portfolio8.png" alt="Office Wall Plaster" />
       <div class="overlay-text">Office Wall Plaster</div>
     </div>
-    <div class="image-container">
-      <img src="./images/portfolio8.jpg" alt="Office Wall Plaster" />
-      <div class="overlay-text">Office Wall Plaster</div>
-    </div>
   </div>
 </section>
 
@@ -93,13 +92,13 @@
       <p><br />Just drop us a message, we will be in touch very soon.</p>
 
     <form id="contact-form" action="https://html-form-server.onrender.com/send" method="POST" enctype="multipart/form-data">
-      <input type="text" name="name" placeholder="Tu nombre" required><br><br>
-      <input type="email" name="email" placeholder="Tu correo" required><br><br>
-      <input type="text" name="address" placeholder="Dirección"><br><br>
-      <textarea name="message" placeholder="Mensaje adicional"></textarea><br><br>
-      <label>Sube imágenes:</label><br>
+      <input type="text" name="name" placeholder="Name" required><br><br>
+      <input type="email" name="email" placeholder="E-mail" required><br><br>
+      <input type="text" name="address" placeholder="Address"><br><br>
+      <textarea name="message" placeholder="Aditional Message"></textarea><br><br>
+      <label>Upload images:</label><br>
       <input type="file" name="images" multiple accept="image/*"><br><br>
-      <button type="submit" title="Click here to send">Enviar</button>
+      <button type="submit" title="Click here to send">Send</button>
     </form>
     <script>
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
@@ -134,7 +133,7 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
 
     <section class="section contact" id="contact">
       <h2>Contact Us</h2>
-      <a href="mailto:styurwall@gmail.com" style="color: black">Email: styurwall@gmail.com</a>
+      <a href="mailto:styurwall@gmail.com" style="color: white">Email: styurwall@gmail.com</a>
       <p>Phone: +61 416 376 019</p>
       <p>Location: Melbourne, VIC</p>
     </section>
