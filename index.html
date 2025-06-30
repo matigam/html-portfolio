@@ -51,7 +51,7 @@
   </script>
 
   <body>
-    <header>
+    <header class="hero-header">
       <h1>Pro Painter Services</h1>
       <p>Residential & Commercial Painting Experts</p>
     </header>
@@ -145,7 +145,7 @@
     <section id="about-us" class="about-section">
       <div class="about-container">
         <div class="about-image">
-          <img src="images/portfolio1.jpg" alt="Team working" />
+          <img src="images/portfolio9.jpg" alt="Team working" />
         </div>
         <div class="about-text">
           <h2>About Us</h2>
@@ -190,11 +190,11 @@
 
     <section class="quick-quote" id="quote">
       <div class="form-wrapper">
-        <h3 style="color: #e63946; text-transform: uppercase">
-          Get a free Quote!
-        </h3>
-        <h2 style="font-size: 1.8em; font-weight: bold">Send Pictures</h2>
-        <p><br />Just drop us a message, we will be in touch very soon.</p>
+        <h3 class="highlight">Get a free Quote!</h3>
+        <h2>Send Pictures</h2>
+        <p class="intro">
+          Just drop us a message, we will be in touch very soon.
+        </p>
 
         <form
           id="contact-form"
@@ -202,29 +202,28 @@
           method="POST"
           enctype="multipart/form-data"
         >
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            required
-          /><br /><br />
-          <input
-            type="email"
-            name="email"
-            placeholder="E-mail"
-            required
-          /><br /><br />
-          <input type="text" name="address" placeholder="Address" /><br /><br />
-          <textarea name="message" placeholder="Aditional Message"></textarea
-          ><br /><br />
-          <label>Upload images:</label><br />
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="E-mail" required />
+          <input type="text" name="address" placeholder="Address" />
+          <textarea
+            name="message"
+            placeholder="Additional Message"
+            rows="4"
+          ></textarea>
+
+          <label for="images">Upload images:</label>
           <input
             type="file"
             name="images"
+            id="images"
             multiple
             accept="image/*"
-          /><br /><br />
-          <button type="submit" title="Click here to send">Send</button>
+          />
+
+          <button type="submit" id="sendBtn">
+            <span class="btn-text">Send</span>
+            <span class="loader"></span>
+          </button>
         </form>
         <script>
           document
@@ -232,6 +231,15 @@
             .addEventListener("submit", async (e) => {
               e.preventDefault();
               const formData = new FormData(e.target);
+
+              // Mostrar animación de carga
+              const sendBtn = document.getElementById("sendBtn");
+              const btnText = sendBtn.querySelector(".btn-text");
+              const loader = sendBtn.querySelector(".loader");
+
+              btnText.textContent = "Sending...";
+              loader.style.display = "block";
+              sendBtn.disabled = true;
 
               try {
                 const response = await fetch(
@@ -244,21 +252,22 @@
 
                 const result = await response.text();
                 alert(result);
+                btnText.textContent = "Sent ✅";
               } catch (err) {
                 alert("Error al enviar el formulario");
                 console.error(err);
+                btnText.textContent = "Send Again";
               }
+
+              loader.style.display = "none";
+              sendBtn.disabled = false;
             });
         </script>
-
-        <hr style="margin: 2rem 0" />
-
-        <p>
-          <strong
-            >In just one week, we can give your entire property a stunning new
-            look. Painting may be a small part of your renovation budget, but it
-            plays the biggest role in transforming the space and creating a
-            lasting impression.
+        <hr />
+        <p class="quote-note">
+          <strong>
+            In just one week, we can give your entire property a stunning new
+            look...
           </strong>
         </p>
       </div>
