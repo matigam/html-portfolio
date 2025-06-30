@@ -27,8 +27,29 @@
     />
     <a href="#quote" class="floating-quote-btn">FREE QUOTE</a>
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Pro Painter Services</title>
   </head>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+    });
+  </script>
+
   <body>
     <header>
       <h1>Pro Painter Services</h1>
@@ -59,7 +80,12 @@
 -->
     <!-- En el head de tu HTML agrega esto si no lo tienes -->
 
-    <section id="services" class="services-section">
+    <section
+      id="services"
+      class="services-section"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <h2>Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
@@ -113,6 +139,52 @@
           </div>
         </div>
         <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section id="about-us" class="about-section">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="images/portfolio1.jpg" alt="Team working" />
+        </div>
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>
+            We are passionate craftsmen delivering high-end plaster and paint
+            finishes across Melbourne. Our goal is to style your wall with
+            precision and personality — combining artistry, technique, and
+            innovation to create stunning feature walls.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process-section">
+      <h2>Our Process</h2>
+
+      <div class="step" data-aos="fade-up">
+        <h3>1. <strong>Consultation</strong></h3>
+        <p>We listen to your needs and assess your space.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <h3>2. <strong>Planning</strong></h3>
+        <p>We tailor a detailed approach and select materials.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <h3>3. <strong>Preparation</strong></h3>
+        <p>We prep your surfaces ensuring perfect results.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="300">
+        <h3>4. <strong>Execution</strong></h3>
+        <p>Our experts bring your vision to life.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="400">
+        <h3>5. <strong>Final Touch</strong></h3>
+        <p>We ensure the finish is flawless and clean up everything.</p>
       </div>
     </section>
 
@@ -206,14 +278,14 @@
       <p>We proudly serve all of Melbourne and surrounding suburbs.</p>
       <div class="map-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125584.01497363366!2d144.8317669360396!3d-37.81421757958239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d87f706ef0e!2sMelbourne%20VIC!5e0!3m2!1sen!2sau!4v1719832616370!5m2!1sen!2sau"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402907588655!2d144.96305761531712!3d-37.8136279797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5777c4b3e7cd41b!2sMelbourne%20VIC!5e0!3m2!1sen!2sau!4v1616638613452!5m2!1sen!2sau"
           width="100%"
-          height="400"
+          height="300"
           style="border: 0"
-          allowfullscreen=""
+          allowfullscreen
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        >
+        </iframe>
       </div>
     </section>
 
