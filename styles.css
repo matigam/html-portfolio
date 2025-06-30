@@ -44,6 +44,21 @@ nav a {
   margin: 0 2rem;
   text-decoration: none;
 }
+.cta-button {
+  background-color: #d18700; /* dorado quemado */
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ffa500; /* más claro al pasar el mouse */
+  color: #fff;
+}
+
 .hero {
   background: url("./images/painter-contact.jpg") no-repeat center center/cover;
   height: 300px;
@@ -303,4 +318,103 @@ body {
   max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  background-color: #d18700; /* dorado quemado */
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ffa500; /* más claro al pasar el mouse */
+  color: #fff;
+}
+.cta-button {
+  box-shadow: 0 0 10px #d18700;
+  border: 1px solid #000;
+}
+.floating-quote-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d18700;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+.floating-quote-btn:hover {
+  background-color: #ffa500;
+}
+
+.services-section {
+  text-align: center;
+  color: white;
+  padding: 3rem 1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.1);
+}
+
+.service-card i {
+  font-size: 2rem;
+  color: #e28b00;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+}
+
+.map-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #0d0d0d;
+  color: white;
+}
+
+.map-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f2a311;
+}
+
+.map-section p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
 }
