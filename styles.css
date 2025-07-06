@@ -201,6 +201,7 @@ body {
 }
 
 .services-section {
+  padding: 60px 20px;
   background: black;
   padding: 60px 20px;
   text-align: center;
@@ -213,6 +214,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 40px;
   font-family: "Georgia", serif;
+  background: #0d0d0d;
 }
 
 .services-grid {
@@ -309,16 +311,6 @@ body {
   justify-content: center;
 }
 
-.branding-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0d0d0d 100%);
-  z-index: 2;
-}
-
 .gold-text {
   font-family: "Pacifico", cursive;
   font-size: 5rem;
@@ -397,6 +389,7 @@ body {
   text-align: center;
   color: white;
   padding: 3rem 1rem;
+  background: #0d0d0d;
 }
 
 .services-grid {
@@ -689,4 +682,8 @@ html {
   padding: 0;
   margin: 0;
   background: #0d0d0d;
+}
+#services {
+  background-color: #0d0d0d;
+  transition: background-color 0.3s ease;
 }
