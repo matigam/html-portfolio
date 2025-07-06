@@ -217,6 +217,23 @@
           <input type="text" name="name" placeholder="Name" required />
           <input type="email" name="email" placeholder="E-mail" required />
           <input type="text" name="address" placeholder="Address" />
+          <input
+            type="text"
+            name="website"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <label for="service">Type of Service</label>
+          <select name="service" id="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="Interior Painting">Interior Painting</option>
+            <option value="Exterior Painting">Exterior Painting</option>
+            <option value="Venetian Plaster">Venetian Plaster</option>
+            <option value="Feature Wall">Feature Wall</option>
+            <option value="Repairs / Patching">Repairs / Patching</option>
+            <option value="Other">Other</option>
+          </select>
           <textarea
             name="message"
             placeholder="Additional Message"
@@ -237,14 +254,51 @@
             <span class="loader"></span>
           </button>
         </form>
+
         <script>
           document
+
             .getElementById("contact-form")
             .addEventListener("submit", async (e) => {
               e.preventDefault();
               const formData = new FormData(e.target);
+              const name = formData.get("name");
+              const email = formData.get("email");
+              const address = formData.get("address");
+              const service = formData.get("service");
+              const userMessage = formData.get("message");
+
+              // Limpiar campo 'message' actual para evitar duplicado
+              formData.delete("message");
+
+              // Formatear mensaje bonito
+              const fullMessage =
+                `Nombre: ${name}\n` +
+                `Email: ${email}\n` +
+                `Dirección: ${address}\n` +
+                `Servicio: ${service}\n` +
+                `Mensaje: ${userMessage}`;
+
+              // Insertar en el campo 'message'
+              formData.set("message", fullMessage);
 
               // Mostrar animación de carga
+              const websiteField = document.querySelector(
+                'input[name="website"]'
+              );
+
+              const serviceField = document.getElementById("service");
+              if (!serviceField.value) {
+                alert("Please select a service type.");
+                e.preventDefault();
+                return;
+              }
+
+              if (websiteField.value !== "") {
+                console.warn("Bot detected — spam blocked.");
+                e.preventDefault();
+                return;
+              }
               const sendBtn = document.getElementById("sendBtn");
               const btnText = sendBtn.querySelector(".btn-text");
               const loader = sendBtn.querySelector(".loader");

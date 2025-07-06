@@ -693,7 +693,16 @@ html {
   margin: 0;
   background: #0d0d0d;
 }
-#services {
-  background-color: #0d0d0d;
+
+#service {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
   transition: background-color 0.3s ease;
 }
