@@ -298,12 +298,25 @@ body {
 }
 
 .branding-section {
+  position: relative;
+  /* tus estilos actuales */
+  z-index: 1;
   background: url("./images/painter-contact2.jpg") no-repeat center center /
     cover;
   height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.branding-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0d0d0d 100%);
+  z-index: 2;
 }
 
 .gold-text {
