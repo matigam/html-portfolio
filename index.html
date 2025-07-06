@@ -3,6 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Venetian plaster and feature wall specialists in Melbourne. Get a stunning custom finish."
+    />
+    <meta
+      property="og:title"
+      content="StyurWall – Venetian Plaster Melbourne"
+    />
+    <meta property="og:image" content="URL de una imagen destacada" />
+    <meta
+      name="keywords"
+      content="Venetian Plaster, Melbourne, Feature Walls, Painting, Decorative Finishes"
+    />
+    <meta name="author" content="StyurWall" />
+    <meta
+      property="og:description"
+      content="Get a stunning custom wall finish with our expert plaster and painting services."
+    />
+    <meta
+      property="og:image"
+      content="https://www.styurwall.com.au/images/portfolio1.jpg"
+    />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="./styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
@@ -67,18 +90,18 @@
       <h1 class="gold-text"></h1>
     </section>
 
-    <!--
-<section class="services-section" id="services">
-  <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service-card">Interior & Exterior Painting</div>
-    <div class="service-card">Venetian Plaster & Feature Walls</div>
-    <div class="service-card">Commercial & Residential Projects</div>
-    <div class="service-card">Surface Preparation & Repairs</div>
-  </div>
-</section>
--->
-    <!-- En el head de tu HTML agrega esto si no lo tienes -->
+    <div class="wave-divider">
+      <svg
+        viewBox="0 0 1440 100"
+        preserveAspectRatio="none"
+        style="display: block"
+      >
+        <path
+          fill="#0d0d0d"
+          d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,90.7C672,75,768,53,864,58.7C960,64,1056,96,1152,101.3C1248,107,1344,85,1392,74.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
 
     <section
       id="services"
@@ -86,7 +109,9 @@
       data-aos="fade-up"
       data-aos-duration="1000"
     >
-      <h2>Our Services</h2>
+      <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+        <h2>Our Services</h2>
+      </div>
       <div class="services-grid">
         <div class="service-card">
           <i class="fas fa-paint-roller"></i>
@@ -114,28 +139,28 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="images/portfolio8.png" alt="" />
+            <img src="images/portfolio8.png" alt="" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="images/portfolio2.jpg" alt="" />
+            <img src="images/portfolio2.jpg" alt="" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="images/portfolio3.jpg" alt="" />
+            <img src="images/portfolio3.jpg" alt="" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="images/portfolio4.jpg" alt="" />
+            <img src="images/portfolio4.jpg" alt="" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="images/portfolio5.jpg" alt="" />
+            <img src="images/portfolio5.jpg" alt="" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="images/portfolio6.jpg" alt="" />
+            <img src="images/portfolio6.jpg" alt="" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="images/portfolio7.jpg" alt="" />
+            <img src="images/portfolio7.jpg" alt="" loading="lazy" />
           </div>
           <div class="swiper-slide">
-            <img src="images/portfolio1.jpg" alt="" />
+            <img src="images/portfolio1.jpg" alt="" loading="lazy" />
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -145,7 +170,7 @@
     <section id="about-us" class="about-section">
       <div class="about-container">
         <div class="about-image">
-          <img src="images/portfolio9.jpg" alt="Team working" />
+          <img src="images/portfolio9.jpeg" alt="Team working" loading="lazy" />
         </div>
         <div class="about-text">
           <h2>About Us</h2>
@@ -253,8 +278,25 @@
                 const result = await response.text();
                 alert(result);
                 btnText.textContent = "Sent ✅";
+
+                const successMsg = document.createElement("p");
+                successMsg.textContent =
+                  "✔️ Your message has been sent successfully!";
+                successMsg.style.color = "#d59629";
+                successMsg.style.marginTop = "1rem";
+                successMsg.style.fontWeight = "bold";
+                successMsg.style.textAlign = "center";
+
+                // Evitar mostrar el mensaje más de una vez
+                const existingMsg = document.querySelector(".success-message");
+                if (!existingMsg) {
+                  successMsg.classList.add("success-message");
+                  document
+                    .querySelector(".form-wrapper")
+                    .appendChild(successMsg);
+                }
               } catch (err) {
-                alert("Error al enviar el formulario");
+                alert("Error");
                 console.error(err);
                 btnText.textContent = "Send Again";
               }
